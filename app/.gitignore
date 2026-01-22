@@ -1,4 +1,15 @@
-venv/
+# Python
 __pycache__/
 *.pyc
-*.csv
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+
+# Data files
+data/raw/
+data/processed/
+
+# IDE/editor
+.vscode/

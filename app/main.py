@@ -15,9 +15,15 @@ except FileNotFoundError:
 print(f"Fetching data for {len(tickers)} tickers...")
 data = yf.download(tickers, period="6mo", interval="1d")
 
-# 3️⃣ Save data to CSV for later use
-data.to_csv("all_market_data.csv")
-print("Data saved to all_market_data.csv ✅")
+import os
+
+# Create raw folder if it doesn't exist
+os.makedirs("../data/raw", exist_ok=True)
+
+# Save CSV to raw folder
+data.to_csv("../data/raw/all_market_data.csv")
+print("Data saved to ../data/raw/all_market_data.csv ✅")
+
 
 # 4️⃣ Show first 5 rows
 print("First 5 rows of market data:\n")
@@ -33,3 +39,4 @@ plt.xlabel("Date")
 plt.ylabel("Price")
 plt.legend()
 plt.show()
+
