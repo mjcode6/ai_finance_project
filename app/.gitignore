@@ -1,15 +1,4 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Virtual environment
-venv/
-
-# Data files
 data/raw/
 data/processed/
-
-# IDE/editor
-.vscode/
+venv/
+*.pyc

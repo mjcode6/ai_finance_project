@@ -11,18 +11,24 @@ except FileNotFoundError:
     print("tickers.csv not found, using default tickers")
     tickers = ["SPY", "NQ=F", "BTC-USD", "EURUSD=X"]  # default fallback
 
-# 2️⃣ Download last 6 months of daily data for all tickers
+# 2️⃣ Download last 10 years of daily data for all tickers
 print(f"Fetching data for {len(tickers)} tickers...")
-data = yf.download(tickers, period="6mo", interval="1d")
+data = yf.download(tickers, period="10y", interval="1d")
 
 import os
 
-# Create raw folder if it doesn't exist
-os.makedirs("../data/raw", exist_ok=True)
+# Get folder where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Save CSV to raw folder
-data.to_csv("../data/raw/all_market_data.csv")
-print("Data saved to ../data/raw/all_market_data.csv ✅")
+# Define raw folder inside project
+raw_folder = os.path.join(script_dir, "../data/raw")
+os.makedirs(raw_folder, exist_ok=True)
+
+# Save CSV in correct place
+csv_path = os.path.join(raw_folder, "all_market_data.csv")
+data.to_csv(csv_path)
+print(f"Data saved to {csv_path} ✅")
+
 
 
 # 4️⃣ Show first 5 rows
