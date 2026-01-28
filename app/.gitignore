@@ -1,9 +1,9 @@
-# Byte-compiled / optimized / DLL files
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment
+# Virtual environments
 venv/
 env/
 ENV/
@@ -13,11 +13,7 @@ build/
 dist/
 *.egg-info/
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Editor / IDE files
+# IDE/editor files
 .vscode/
 .idea/
 *.swp
@@ -27,8 +23,36 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Env variables
+# Environment variables
 .env
+
+# Raw / processed data
+data/
+features/
+models/
 
 # Logs
 *.log
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files
+data/
+*.csv
+
+# Sensitive files
+.env
